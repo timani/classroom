@@ -49,7 +49,7 @@ gem 'sprockets'
 gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 gem 'sidekiq', git: 'https://github.com/mperham/sidekiq.git', ref: 'c187be65214728e212b23e2d49ad6da563a00559'
 
-gem 'turbolinks', '~> 2.5.3'
+gem 'turbolinks', '~> 5.0', '>= 5.0.1'
 
 gem 'uglifier', '>= 1.3.0'
 
