@@ -21,7 +21,7 @@ class AssignmentInvitation < ApplicationRecord
       return assignment_repo if assignment_repo.present?
     end
 
-    AssignmentRepo.find_or_create_by!(assignment: assignment, user: invitee)
+    AssignmentRepo::Creator.perform(assignment: assignment, organization: organization, user: invitee)
   end
 
   def title

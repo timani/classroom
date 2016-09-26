@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 class AssignmentRepo < ApplicationRecord
-  include GitHubPlan
-  include GitHubRepoable
   include Nameable
 
   update_index('stafftools#assignment_repo') { self }
@@ -16,16 +14,6 @@ class AssignmentRepo < ApplicationRecord
 
   validates :github_repo_id, presence:   true
   validates :github_repo_id, uniqueness: true
-
-  before_validation(on: :create) do
-    if organization
-      create_github_repository
-      push_starter_code
-      add_user_as_collaborator
-    end
-  end
-
-  before_destroy :silently_destroy_github_repository
 
   delegate :creator, :starter_code_repo_id, to: :assignment
   delegate :github_user,                    to: :user

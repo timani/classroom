@@ -7,7 +7,14 @@ class AssignmentInvitationsController < ApplicationController
   before_action :ensure_github_repo_exists, only: [:successful_invitation]
 
   def accept_invitation
-    create_assignment_repo { redirect_to successful_invitation_assignment_invitation_path }
+    result = invitation.redeem_for(invitee)
+
+    if result.success?
+      redirect_to successful_invitation_assignment_invitation_path
+    else
+      flash[:error] = 'An error has occurred, please refresh the page and try again.'
+      redirect_to :show
+    end
   end
 
   def show
@@ -55,17 +62,6 @@ class AssignmentInvitationsController < ApplicationController
     @organization ||= assignment.organization
   end
   helper_method :organization
-
-  def create_assignment_repo
-    users_assignment_repo = invitation.redeem_for(current_user)
-
-    if users_assignment_repo.present?
-      yield if block_given?
-    else
-      flash[:error] = 'An error has occurred, please refresh the page and try again.'
-      redirect_to :show
-    end
-  end
 
   def student_identifier
     @student_identifier ||= StudentIdentifier.find_by(user: current_user,
