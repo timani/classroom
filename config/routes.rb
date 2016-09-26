@@ -81,19 +81,22 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :organizations, path: 'classrooms', only: [:show]
+    resources :organizations, path: 'classrooms', only: [:show] do
+      resources :repo_accesses, only: [:show]
 
-    resources :repo_accesses, only: [:show]
+      resources :assignments, only: [:show] do
+        resources :assignment_invitations, only: [:show]
+        resources :assignment_repos,       only: [:show]
+      end
 
-    resources :assignment_invitations, only: [:show]
-    resources :assignment_repos,       only: [:show]
-    resources :assignments,            only: [:show]
+      resources :group_assignments, path: 'group-assignments', only: [:show] do
+        resources :group_assignment_invitations, path: 'group-assignment-invitations', only: [:show]
+        resources :group_assignment_repos,       path: 'group-assignment-repos',       only: [:show]
+      end
 
-    resources :group_assignment_invitations, path: 'group-assignment-invitations', only: [:show]
-    resources :group_assignment_repos,       path: 'group-assignment-repos',       only: [:show]
-    resources :group_assignments,            path: 'group-assignments',            only: [:show]
-
-    resources :groupings, only: [:show]
-    resources :groups,    only: [:show]
+      resources :groupings, only: [:show] do
+        resources :groups, only: [:show]
+      end
+    end
   end
 end

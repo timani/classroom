@@ -9,7 +9,7 @@ module Stafftools
     private
 
     def set_group
-      @group = Group.find_by!(id: params[:id])
+      @group = Group.includes(:grouping, :repo_accesses).find_by!(grouping_id: params[:grouping_id], id: params[:id])
     end
   end
 end

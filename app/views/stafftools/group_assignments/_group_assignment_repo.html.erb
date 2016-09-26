@@ -1,4 +1,4 @@
 <li class="clearfix">
   <%= octicon 'repo' %>
-  <strong><%= link_to group_assignment_repo.github_repository.full_name, stafftools_group_assignment_repo_path(group_assignment_repo.id) %></strong>
+  <strong><%= link_to group_assignment_repo.github_repository.full_name, stafftools_organization_group_assignment_group_assignment_repo_path(group_assignment_repo.group_assignment.organization_id, group_assignment_repo.group_assignment.id, group_assignment_repo.id) %></strong>
 </li>

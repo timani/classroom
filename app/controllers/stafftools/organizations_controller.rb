@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 module Stafftools
   class OrganizationsController < StafftoolsController
-    before_action :set_organization
-
     def show
     end
 
     private
 
-    def set_organization
-      @organization = Organization.includes(:users).find_by!(id: params[:id])
+    def organization
+      @organization ||= Organization
+                        .includes(:assignments, :groupings, :group_assignments, :users)
+                        .find_by!(id: params[:id])
     end
+    helper_method :organization
   end
 end

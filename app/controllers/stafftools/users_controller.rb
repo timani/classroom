@@ -23,7 +23,7 @@ module Stafftools
     private
 
     def set_user
-      @user = User.find_by!(id: params[:id])
+      @user = User.includes(:repo_accesses).find_by!(id: params[:id])
     end
   end
 end

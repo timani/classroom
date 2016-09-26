@@ -7,6 +7,7 @@ class GroupAssignmentRepo < ApplicationRecord
   update_index('stafftools#group_assignment_repo') { self }
 
   has_one :organization, -> { unscope(where: :deleted_at) }, through: :group_assignment
+  has_one :grouping, through: :group
 
   has_many :repo_accesses, through: :group
 

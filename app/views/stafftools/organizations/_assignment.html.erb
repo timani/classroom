@@ -1,4 +1,4 @@
 <li class="clearfix">
   <%= octicon 'person' %>
-  <strong><%= link_to assignment.title, stafftools_assignment_path(assignment.id) %></strong>
+  <strong><%= link_to assignment.title, stafftools_organization_assignment_path(assignment.organization_id, assignment.id) %></strong>
 </li>

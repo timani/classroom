@@ -9,7 +9,7 @@ module Stafftools
     private
 
     def set_group_assignment_repo
-      @group_assignment_repo = GroupAssignmentRepo.find_by!(id: params[:id])
+      @group_assignment_repo = GroupAssignmentRepo.includes(:group).find_by!(id: params[:id])
     end
   end
 end

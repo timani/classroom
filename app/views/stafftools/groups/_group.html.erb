@@ -3,7 +3,7 @@
     <%= octicon 'organization', height: 22 %>
   </span>
 
-  <%= link_to stafftools_group_path(group.id) do %>
+  <%= link_to stafftools_organization_grouping_group_path(group.organization_id, group.grouping_id, group.id) do %>
     <strong class="search-result-title">The <%= group.title %> Group for <%= group.organization_login %></strong>
   <% end %>
 

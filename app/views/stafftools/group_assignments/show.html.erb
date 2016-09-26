@@ -36,12 +36,11 @@
         <% end %>
         <tr>
           <td class="text-emphasized">Grouping</td>
-          <td><%= link_to @group_assignment.grouping.title, stafftools_grouping_path(@group_assignment.grouping) %></td>
-
+          <td><%= link_to @group_assignment.grouping.title, stafftools_organization_grouping_path(@group_assignment.organization_id, @group_assignment.grouping) %></td>
         </tr>
         <tr>
           <td class="text-emphasized">Invitation</td>
-          <td><%= link_to @group_assignment.group_assignment_invitation.key, stafftools_group_assignment_invitation_path(@group_assignment.group_assignment_invitation.id) %></td>
+          <td><%= link_to @group_assignment.group_assignment_invitation.key, stafftools_organization_group_assignment_group_assignment_invitation_path(@group_assignment.organization_id, @group_assignment.id, @group_assignment.group_assignment_invitation.id) %></td>
         </tr>
         <tr>
           <td class="text-emphasized">Created on</td>
@@ -50,7 +49,6 @@
         <tr>
           <td class="text-emphasized">Last updated</td>
           <td><%= local_time(@group_assignment.created_at) %></td>
-
         </tr>
       </table>
     </div>
