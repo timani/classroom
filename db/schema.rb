@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20160621020153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "assignment_invitations", force: :cascade do |t|
     t.string   "key",           null: false
@@ -49,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160621020153) do
     t.integer  "creator_id"
     t.datetime "deleted_at"
     t.string   "slug",                                       null: false
-    t.integer  "student_identifier_type_id"
     t.boolean  "students_are_repo_admins",   default: false, null: false
+    t.integer  "student_identifier_type_id"
     t.index ["deleted_at"], name: "index_assignments_on_deleted_at", using: :btree
     t.index ["organization_id"], name: "index_assignments_on_organization_id", using: :btree
     t.index ["slug"], name: "index_assignments_on_slug", using: :btree
@@ -89,8 +90,8 @@ ActiveRecord::Schema.define(version: 20160621020153) do
     t.datetime "deleted_at"
     t.string   "slug",                                       null: false
     t.integer  "max_members"
-    t.integer  "student_identifier_type_id"
     t.boolean  "students_are_repo_admins",   default: false, null: false
+    t.integer  "student_identifier_type_id"
     t.index ["deleted_at"], name: "index_group_assignments_on_deleted_at", using: :btree
     t.index ["organization_id"], name: "index_group_assignments_on_organization_id", using: :btree
     t.index ["slug"], name: "index_group_assignments_on_slug", using: :btree

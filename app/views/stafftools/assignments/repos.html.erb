@@ -1,0 +1,6 @@
+<ul class="boxed-group-list standalone">
+  <%= render(
+    partial:    'stafftools/assignments/assignment_repo',
+    collection: assignment.assignment_repos,
+    locals:     { client: assignment.organization.github_client }) %>
+</ul>

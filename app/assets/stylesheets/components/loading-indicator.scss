@@ -1,3 +1,10 @@
+.content-loading-indicator {
+  display: block;
+  padding: 3rem;
+  background: image-url("octocat-spinner-128.gif") no-repeat center center;
+  background-size: 64px;
+}
+
 .loading-indicator {
   &::after {
     position: fixed;
@@ -10,4 +17,13 @@
     background: rgba(255, 255, 255, 0.7) image-url("octocat-spinner-128.gif") no-repeat center center;
     background-size: 64px;
   }
+}
+
+.tiny-loading-indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background: image-url("octocat-spinner-32.gif");
+  background-size: cover;
 }
