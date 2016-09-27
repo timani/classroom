@@ -11,8 +11,13 @@ cd "$(dirname "$0")/.."
 echo "Running tests ..."
 date "+%H:%M:%S"
 
-# run tests.
-script/test
-
-# run linters
-script/linter
+case $TEST_SUITE in
+  rspec)
+    bundle exec rake db:migrate
+    bundle exec rspec
+    ;;
+  linters)
+    script/linter
+    ;;
+  *) echo 'TEST_SUITE not set' ;;
+esac
