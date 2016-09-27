@@ -17,8 +17,14 @@ case $TEST_SUITE in
     bundle exec rake db:migrate
     bundle exec rspec
     ;;
-  linters)
-    script/linter
+  rubocop)
+    bundle exec rubocop
+    ;;
+  scss)
+    bundle exec scss-lint
+    ;;
+  coffee)
+    bundle exec coffeelint.rb -f config/coffeelint.json -r app/assets
     ;;
   *) echo 'TEST_SUITE not set' ;;
 esac
