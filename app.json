@@ -39,12 +39,19 @@
       "required": false
     }
   },
-
   "addons": [
     "bonsai",
     "heroku-postgresql",
     "heroku-redis",
     "memcachedcloud",
     "newrelic"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
   ]
 }

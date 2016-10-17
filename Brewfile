@@ -6,6 +6,7 @@ tap "github/bootstrap"
 cask "java"
 
 brew "nodejs"
+brew "yarn"
 brew "terminal-notifier"
 
 brew "elasticsearch17", restart_service: :changed
