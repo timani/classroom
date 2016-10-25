@@ -16,7 +16,7 @@
                 <%= render @student_identifier_types %>
               </div>
           <% else %>
-              <div class="blankslate large-format spacious clean-background">
+              <div class="blankslate blankslate-spacious large-format clean-background">
                 <h3>This organization doesn't have any student identifier types yet.</h3>
                 <%= link_to new_organization_student_identifier_type_path(@organization), class: 'btn btn-green btn-big', role: 'button' do %>
                     Create your first student identifier type

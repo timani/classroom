@@ -188,7 +188,6 @@ main {
 }
 
 .site-content-heading {
-  padding-top: 0.3rem;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 20px;
@@ -324,7 +323,7 @@ hr {
 
   &.disabled {
     a {
-      color: $brand-gray;
+      color: $text-gray;
     }
 
     .avatar {
@@ -347,10 +346,10 @@ hr {
   .student-login {
     display: block;
     padding-top: 4px;
-    color: $brand-gray-dark;
+    color: $text-gray-dark;
 
     &:hover {
-      color: $brand-blue;
+      color: $text-blue;
     }
   }
 }
@@ -368,7 +367,7 @@ hr {
 
   &.disabled {
     a {
-      color: $brand-gray;
+      color: $text-gray;
     }
 
     .avatar {
@@ -386,10 +385,10 @@ hr {
 
   .team-name {
     display: block;
-    color: $brand-gray-dark;
+    color: $text-gray-dark;
 
     &:hover {
-      color: $brand-blue;
+      color: $text-blue;
     }
   }
 
@@ -431,7 +430,7 @@ hr {
     padding-top: 0.4em;
 
     &:hover {
-      color: $brand-blue;
+      color: $text-blue;
     }
   }
 
@@ -494,7 +493,16 @@ hr {
   }
 }
 
-.blankslate.spacious {
+.blankslate.blankslate-spacious {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 20px;
+  }
+
   @media (max-width: 34em) {
     padding: 1rem 0;
   }
@@ -579,9 +587,9 @@ hr {
   &:active,
   &.selected {
     color: #fff;
-    background-color: $brand-blue;
+    background-color: $bg-blue;
     background-image: none;
-    border-color: $brand-blue;
+    border-color: $bg-blue;
   }
 
   &.disabled {
@@ -622,7 +630,7 @@ hr {
 
   &.disabled {
     a {
-      color: $brand-gray;
+      color: $text-gray;
     }
 
     .avatar {
@@ -645,10 +653,10 @@ hr {
   .search-result-title {
     display: block;
     padding-top: 4px;
-    color: $brand-gray-dark;
+    color: $text-gray-dark;
 
     &:hover {
-      color: $brand-blue;
+      color: $text-blue;
     }
   }
 }

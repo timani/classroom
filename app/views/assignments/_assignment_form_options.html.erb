@@ -1,25 +1,25 @@
-<dl class="form">
+<dl class="form-group">
   <dt><%= f.label :title %></dt>
-  <dd><%= f.text_field :title, class: 'textfield' %></dd>
+  <dd><%= f.text_field :title, class: 'form-control' %></dd>
 </dl>
 
-<dl class="form">
+<dl class="form-group">
   <dt><%= f.label :slug %></dt>
-  <dd><%= f.text_field :slug, class: 'textfield' %></dd>
-  <span class="note"><%= t('assignment_form.slug_note') %></span>
+  <dd><%= f.text_field :slug, class: 'form-control' %></dd>
+  <p class="note"><%= t('assignment_form.slug_note') %></span>
 </dl>
 
-<dl class="form">
+<dl class="form-group">
   <div class="form-checkbox">
     <label><%= f.radio_button :public_repo, true %> Public</label>
     <%= octicon 'repo', height: 32 %>
-    <span class="note">Submit assignments using public repositories. All submissions will be visible to the world.</span>
+    <p class="note">Submit assignments using public repositories. All submissions will be visible to the world.</span>
   </div>
 
   <div class="form-checkbox">
     <label><%= f.radio_button :public_repo, false %> Private</label>
     <%= octicon 'lock', height: 32 %>
-    <span class="note">Submit assignments using private repositories. Submissions will only be visible to the submitter and organization owners.</span>
+    <p class="note">Submit assignments using private repositories. Submissions will only be visible to the submitter and organization owners.</span>
   </div>
 
   <div class="form-checkbox">
@@ -27,9 +27,9 @@
   </div>
 </dl>
 
-<dl class="form">
-  <dt><label>Add your starter code from GitHub <small>(optional)</small> </label></dt>
-  <dd><input class="textfield js-autocomplete-textfield" type="text" name="repo_name" value="<%= @assignment.starter_code_repository.try(:full_name) %>" placeholder="<%= @assignment.starter_code_repository.try(:full_name) || 'Search repositories'%>" autocomplete="off" data-autocomplete-search-endpoint="github_repos"></dd>
+<dl class="form-group">
+  <dt><label>Add your starter code from GitHub <small>(optional)</small></label></dt>
+  <dd><input class="form-control js-autocomplete-textfield" type="text" name="repo_name" value="<%= @assignment.starter_code_repository.try(:full_name) %>" placeholder="<%= @assignment.starter_code_repository.try(:full_name) || 'Search repositories'%>" autocomplete="off" data-autocomplete-search-endpoint="github_repos"></dd>
   <dd class="dd-autocomplete-suggestions"><%= render_autocomplete_suggestions_container %></dd>
   <input class="js-autocomplete-resource-id" type="hidden" name="repo_id" />
 </dl>
