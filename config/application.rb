@@ -25,10 +25,10 @@ module GitHubClassroom
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    # Add bower assets to the path
-    root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
-      config.sass.load_paths << bower_path
-      config.assets.paths << bower_path
+    # Add node modules assets to the path
+    root.join('node_modules').to_s.tap do |node_path|
+      config.sass.load_paths << node_path
+      config.assets.paths << node_path
     end
 
     # Append directories to autoload paths

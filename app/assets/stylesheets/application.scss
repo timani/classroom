@@ -1,9 +1,9 @@
 //= require peek
 //= require peek/views/performance_bar
 
-@import "primer-css/scss/primer";
+@import "primer-css/index";
 
-@import "primer-markdown/components/markdown";
+@import "primer-markdown/index";
 
 @import "components/*";
 

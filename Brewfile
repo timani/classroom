@@ -7,6 +7,7 @@ cask "java"
 
 brew "nodejs"
 brew "terminal-notifier"
+brew "yarn"
 
 brew "elasticsearch17", restart_service: :changed
 brew "memcached",       restart_service: :changed
