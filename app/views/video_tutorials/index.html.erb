@@ -1,0 +1,16 @@
+<div class="site-content">
+  <% @youtube_videos.each do |video| %>
+    <div class="site-content-cap">
+      <div class="flex-table">
+        <div class="flex-table-item">
+          <h1 class="text-left"><%= video.title %></h1>
+          <p class="lead text-left"><%= video.description %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-content-body">
+      <!-- <iframe src="https://www.youtube.com/embed/<%= video.id %>" frameborder="0" allowfullscreen></iframe> -->
+    </div>
+  <% end %>
+</div>
