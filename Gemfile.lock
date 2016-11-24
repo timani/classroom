@@ -410,6 +410,8 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    yt (0.28.1)
+      activesupport
 
 PLATFORMS
   ruby
@@ -478,6 +480,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   vcr
   webmock
+  yt
 
 RUBY VERSION
    ruby 2.3.1p112
