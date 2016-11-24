@@ -63,6 +63,7 @@ ENV Variable | Description |
 `GOOGLE_ANALYTICS_TRACKING_ID` | identifier for Google Analytics in the format `UA-.*`
 `PINGLISH_ENABLED` | Enable the `/_ping` endpoint with relevant health checks
 `MOTD` | Show the message of the day banner at the top of the site
+`YT_API_KEY` | The API key from Google to use the YouTube API
 
 ### Development environment variables
 These values must be present in your `.env` file (created by `script/setup`).
